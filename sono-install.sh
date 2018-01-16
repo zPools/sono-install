@@ -42,7 +42,7 @@ touch ~/.altcommunitycoin/altcommunitycoin.conf
 ex -sc '1i|addnode=multi.zPools.de' -cx ~/.altcommunitycoin/altcommunitycoin.conf
 ex -sc '1i|addnode=zPools.de' -cx ~/.altcommunitycoin/altcommunitycoin.conf
 ex -sc '1i|masternodeprivkey=”Private Key”' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|masternodeaddr=”Change it to server IP:Port”' -cx ~/.altcommunitycoin/altcommunitycoin.conf
+ex -sc '1i|masternodeaddr=”Change it to server IP:Port (26855)”' -cx ~/.altcommunitycoin/altcommunitycoin.conf
 ex -sc '1i|masternode=1' -cx ~/.altcommunitycoin/altcommunitycoin.conf
 ex -sc '1i|port=26855' -cx ~/.altcommunitycoin/altcommunitycoin.conf
 ex -sc '1i|irc=0' -cx ~/.altcommunitycoin/altcommunitycoin.conf
