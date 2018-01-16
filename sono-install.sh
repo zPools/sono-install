@@ -2,9 +2,13 @@
 
 clear && echo We start with getting all dependencies && sleep 3
 
+#We know that you already did that, but we make it again
+sudo apt-get update
+sudo apt-get dist-upgrade -y
+
 
 #Get all dependencies
-sudo apt-get install -y build-essential libssl-dev libdb++-dev libdb-dev libboost-all-dev libqrencode-dev libminiupnpc-dev fail2ban vim git glances
+sudo apt-get install -y build-essential libssl-dev libdb++-dev libdb-dev libboost-all-dev libqrencode-dev libminiupnpc-dev make fail2ban vim git glances
 
 
 clear && echo We now create the SWAP to ensure that 1GB RAM is working && sleep 3
