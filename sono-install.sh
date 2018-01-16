@@ -26,7 +26,7 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 clear && echo Downloading the wallet from source and compile it ourself && sleep 3
 
 #Building the wallet (Get yourself some coffee, this may takes some time)
-git clone https://github.com/altcommunitycoin/altcommunitycoin-skunk.git altcom
+git clone https://github.com/altcommunitycoin/altcommunitycoin-skunk.git ~/altcom
 cd ~/altcom/src/leveldb
 sudo chmod +x build_detect_platform
 make libleveldb.a libmemenv.a
