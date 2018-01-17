@@ -60,5 +60,5 @@ rm mycron
 
 #Starting the wallet and end with ~/
 altcommunitycoind
-cd
+cd ~/
 clear && echo The wallet is now running. Now the server builds the chain. You now need to edit the config file.
