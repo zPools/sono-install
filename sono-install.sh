@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get dist-upgrade -y
 
 #Get all dependencies
-sudo apt-get install -y build-essential libssl-dev libdb++-dev libdb-dev libboost-all-dev libqrencode-dev libminiupnpc-dev make fail2ban vim git glances
+sudo apt-get install -y build-essential libssl-dev libdb++-dev libdb-dev libboost-all-dev libqrencode-dev libminiupnpc-dev make fail2ban vim git glances nano
 
 clear && echo We now create the SWAP to ensure that 1GB RAM is working && sleep 3
 
