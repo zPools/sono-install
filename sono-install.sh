@@ -54,7 +54,7 @@ ex -sc '1i|listen=1' -cx ~/.SONO/SONO.conf
 ex -sc '1i|server=1' -cx ~/.SONO/SONO.conf
 ex -sc '1i|daemon=1' -cx ~/.SONO/SONO.conf
 ex -sc '1i|rpcpassword=MakeItRandom' -cx ~/.SONO/SONO.conf
-ex -sc '1i|rpcuser=NeedToSoundCool' -cx ~~/.SONO/SONO.conf
+ex -sc '1i|rpcuser=NeedToSoundCool' -cx ~/.SONO/SONO.conf
 
 clear && echo Configuration is set, we now make it smoother to work with && sleep 3
 
