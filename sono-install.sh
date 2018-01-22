@@ -31,7 +31,7 @@ sudo chmod +x install-dependencies.sh
 #Tripple verify correct Barkley
 sudo add-apt-repository ppa:bitcoin/bitcoin
 sudo apt-get update
-sudo apt-get install libdb4.8-dev libdb4.8++-dev
+sudo apt-get install -y libdb4.8-dev libdb4.8++-dev 
 
 cd ~/sono/src/leveldb
 sudo chmod +x build_detect_platform
