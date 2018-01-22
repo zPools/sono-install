@@ -22,43 +22,52 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 clear && echo Downloading the wallet from source and compile it ourself && sleep 3
 
 #Building the wallet (Get yourself some coffee, this may takes some time)
-git clone https://github.com/altcommunitycoin/altcommunitycoin-skunk.git ~/altcom
-cd ~/altcom/src/leveldb
+git clone https://github.com/altcommunitycoin/SONO.git ~/sono
+
+#Run the dependencies, to be on the save side
+cd ~/sono
+sudo chmod +x install-dependencies.sh
+
+#Tripple verify correct Barkley
+sudo add-apt-repository ppa:bitcoin/bitcoin
+sudo apt-get update
+sudo apt-get install libdb4.8-dev libdb4.8++-dev
+
+cd ~/sono/src/leveldb
 sudo chmod +x build_detect_platform
 make libleveldb.a libmemenv.a
-cd ~/altcom/src
+cd ~/sono/src
 make -f makefile.unix
 
 clear && echo Wallet is compiled. We now create the standard configuration && sleep 3
 
 #Building the config
-mkdir ~/.altcommunitycoin/
-touch ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|addnode=multi.zPools.de' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|addnode=zPools.de' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|masternodeprivkey=”Private Key”' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|masternodeaddr=”Change it to server IP:Port (26855)”' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|masternode=1' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|port=26855' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|irc=0' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|listen=1' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|server=1' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|daemon=1' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|rpcpassword=MakeItRandom' -cx ~/.altcommunitycoin/altcommunitycoin.conf
-ex -sc '1i|rpcuser=NeedToSoundCool' -cx ~/.altcommunitycoin/altcommunitycoin.conf
+mkdir ~/.SONO/
+touch ~/.SONO/SONO.conf
+ex -sc '1i|addnode=multi.zPools.de' -cx ~/.SONO/SONO.conf
+ex -sc '1i|addnode=zPools.de' -cx ~/.SONO/SONO.conf
+ex -sc '1i|masternodeprivkey=”Private Key”' -cx ~/.SONO/SONO.conf
+ex -sc '1i|masternodeaddr=”Change it to server IP:Port (26855)”' -cx ~/.SONO/SONO.conf
+ex -sc '1i|masternode=1' -cx ~/.SONO/SONO.conf
+ex -sc '1i|port=26855' -cx ~/.SONO/SONO.conf
+ex -sc '1i|listen=1' -cx ~/.SONO/SONO.conf
+ex -sc '1i|server=1' -cx ~/.SONO/SONO.conf
+ex -sc '1i|daemon=1' -cx ~/.SONO/SONO.conf
+ex -sc '1i|rpcpassword=MakeItRandom' -cx ~/.SONO/SONO.conf
+ex -sc '1i|rpcuser=NeedToSoundCool' -cx ~~/.SONO/SONO.conf
 
 clear && echo Configuration is set, we now make it smoother to work with && sleep 3
 
 #Make it smooth to use
-sudo cp ~/altcom/src/altcommunitycoind /usr/bin
+sudo cp ~/sono/src/SONOd /usr/bin
 
 #Set the wallet to “autostart”
 crontab -l > mycron
-echo "@reboot altcommunitycoind" >> mycron
+echo "@reboot SONOd" >> mycron
 crontab mycron
 rm mycron
 
 #Starting the wallet
-altcommunitycoind
+SONOd
 
 clear && echo The wallet is now running. Now the server builds the chain. You now need to edit the config file.
