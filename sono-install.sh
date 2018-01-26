@@ -27,6 +27,7 @@ git clone https://github.com/altcommunitycoin/SONO.git ~/sono
 #Run the dependencies, to be on the save side
 cd ~/sono
 sudo chmod +x install-dependencies.sh
+./install-dependencies.sh
 
 #Tripple verify correct Barkley
 sudo add-apt-repository ppa:bitcoin/bitcoin
