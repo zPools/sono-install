@@ -46,9 +46,9 @@ mkdir ~/.SONO/
 touch ~/.SONO/SONO.conf
 ex -sc '1i|addnode=multi.zPools.de' -cx ~/.SONO/SONO.conf
 ex -sc '1i|addnode=zPools.de' -cx ~/.SONO/SONO.conf
-ex -sc '1i|masternodeprivkey=”Private Key”' -cx ~/.SONO/SONO.conf
-ex -sc '1i|masternodeaddr=”Change it to server IP:Port (26855)”' -cx ~/.SONO/SONO.conf
-ex -sc '1i|masternode=1' -cx ~/.SONO/SONO.conf
+ex -sc '1i|#masternodeprivkey=”Private Key”' -cx ~/.SONO/SONO.conf
+ex -sc '1i|#masternodeaddr=”Change it to server IP:Port (26855)”' -cx ~/.SONO/SONO.conf
+ex -sc '1i|#masternode=1' -cx ~/.SONO/SONO.conf
 ex -sc '1i|port=26855' -cx ~/.SONO/SONO.conf
 ex -sc '1i|listen=1' -cx ~/.SONO/SONO.conf
 ex -sc '1i|server=1' -cx ~/.SONO/SONO.conf
