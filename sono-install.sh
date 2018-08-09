@@ -22,7 +22,7 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 clear && echo Downloading the wallet from source and compile it ourself && sleep 3
 
 #Building the wallet (Get yourself some coffee, this may takes some time)
-git clone https://github.com/altcommunitycoin/SONO.git ~/sono
+git clone https://github.com/zPools/sonoa.git ~/sono
 
 #Run the dependencies, to be on the save side
 cd ~/sono
